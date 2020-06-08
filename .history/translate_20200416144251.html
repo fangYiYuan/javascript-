@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .divbox{
+    margin: 100px auto;
+    position: relative;
+    width: 100px;
+    height: 200px;
+  }
+  .divbox > div{
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s;
+  }
+  .div:nth-of-type(1):active {
+    transform: rotate(60);
+  }
+  .div:nth-of-type(2):active {
+    transform: rotate(120);
+  }
+  .div:nth-of-type(3):active {
+    transform: rotate(180);
+  }
+  .div:nth-of-type(4):active {
+    transform: rotate(240);
+  }
+  .div:nth-of-type(5):active {
+    transform: rotate(300);
+  }
+  .div:nth-of-type(6):active {
+    transform: rotate(360);
+  }
+</style>
+<body>
+  <div class="divbox">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

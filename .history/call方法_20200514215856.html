@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {name: 'alex'}
+    function person (age, sex) {
+      this.age = age
+      this.sex = sex
+    }
+    Function.prototype.call2 = function (o) {
+      o = o || window
+      o.fun = this
+      let arr = []
+      for (let i = 1; i < arguments.length; i++) {
+        arr.push(arguments[i])
+      }
+      let result = eval('o.fun(' + arr + ')')
+      return result
+      delete o.fun
+    }
+    person.call2(obj, 12, 1)
+  </script>
+</body>
+</html>

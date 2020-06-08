@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    // function result (x) {
+    //   return x * x
+    // }
+    // let arr = [1, 2, 3, 4, 5, 6]
+    // let arr1 = arr.map(result)
+    // let arr2 = arr1.map(String)
+    // let arr3 = arr.reduce(function (x, y) {
+    //   return x + y
+    // })
+    // console.log(arr3)
+
+    // let arr = [1, 2, 3, 4, 5, 6]
+    // let arr1 = arr.filter(function (x) {
+    //   return x % 2 === 0
+    // })
+
+    // let arr = [' a ', '', null, 'bv  ', undefined, '', 'wq']
+    // let arr1 = arr.filter(function (x) {
+    //   return x && x.trim()
+    // })
+
+    // let color = ['red', 'yellow', 'red', 'green', 'orange', 'blue', 'red']
+    // let arr1 = color.filter(function (e, i, arr) {
+    //   return arr.indexOf(e) === i
+    // })
+    // console.log(color)
+    // console.log(arr1)
+
+    // (function (x) {console.log(x)} )(1)
+
+    // function Person (name) {
+    //   this.name = name || ''
+    //   this.color = ['red', 'green', 'blue']
+    // }
+    // Person.prototype.say = function () {
+    //   console.log(this.name)
+    // }
+    // function PersonChild () {
+    //   Person.call(this, 'alex')
+    //   this.age = 12
+    // }
+    // function inherit (p, pc) {
+    //   pc.prototype = p.prototype
+    //   // function f () {}
+    //   // f.prototype = p.prototype
+    //   // pc.prototype = new f()
+    //   // pc.constructor = pc
+    // }
+    // inherit(Person, PersonChild)
+    // PersonChild.prototype.sayAge = function () {
+    //   console.log(this.age)
+    // }
+    // let p = new PersonChild()
+    // console.dir(p)
+    // p.say()
+    // p.sayAge()
+
+    // let obj = {
+    //   name: 'alex'
+    // }
+    // function p (name) {
+    //   this.name = name
+    // }
+    // let a = p.call(obj, 'yiyuan')
+    // console.log(a)
+  function isObject(value) {
+    const type = typeof value;
+    return value !== null && (type === 'object' || type === 'function');
+  }
+
+  /**
+  * constructor 表示 new 的构造器
+  * args 表示传给构造器的参数
+  */
+  function New(constructor, ...args) {
+    // new 的对象不是函数就抛 TypeError
+    if (typeof constructor !== 'function') throw new TypeError(`${constructor} is not a constructor`);
+
+    // 创建一个原型为构造器的 prototype 的空对象 target
+    const target = Object.create(constructor.prototype);
+    // 将构造器的 this 指向上一步创建的空对象，并执行，为了给 this 添加实例属性
+    const result = constructor.apply(target, args);
+    console.log(result)
+    // 上一步的返回如果是对象就直接返回，否则返回 target
+    return isObject(result) ? result : target;
+  }
+  function Computer(brand) {
+    this.brand = brand;
+  }
+
+  const c = New(Computer, 'Apple');
+  console.log(c); // => Computer { brand: 'Apple' }
+
+  </script>
+</body>
+</html>

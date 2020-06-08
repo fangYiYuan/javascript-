@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    // var foo = function () {
+    //   console.log('111')
+    // }
+    // foo()
+    // var foo = function () {
+    //   console.log('333')
+    // }
+    // foo()
+    var a = { n: 1 };
+    var b = a;
+    // b = {n: 1}
+    a.x = a = { n: 2 };
+    // {n: 1}.x = a = {n: 2}
+    //  此时a = {n: 2}
+    // {n: 1}.x = {n: 2}
+    // {n: 1
+    
+    }
+    console.log(a);
+    console.log(b);
+  </script>
+</body>
+</html>

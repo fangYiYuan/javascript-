@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function foo() {
+      let x = 10;
+      return (function () {
+        return console.log(x)
+      })()
+    }
+    let x = 20;
+    // 调用`foo`来返回`bar`闭包。
+    let bar = foo;
+    console.log('aaa',foo())
+    console.log(bar)
+  </script>
+</body>
+</html>

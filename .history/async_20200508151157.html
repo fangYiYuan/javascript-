@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    // async function person () {
+    //   console.log('111')
+    //   return 'hello'
+    // }
+    // person().then(res => {
+    //   console.log('2222')
+    // })
+    // console.log('333')
+    async function async1 () {
+    console.log('nc1 start')
+    await async2()
+      console.log('nc1 end')
+    }
+    async function async2 () {
+      console.log('nc2')
+    }
+    console.log('start')
+    async1()
+    console.log('end')
+  </script>
+</body>
+</html>

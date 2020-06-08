@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+    <div id="test-div">
+    <div class="c-red">
+        <p id="test-p">JavaScript</p>
+        <p>Java</p>
+      </div>
+      <div class="c-red c-green c2">
+        <p>Python</p>
+        <p>Ruby</p>
+        <p>Swift</p>
+      </div>
+      <div class="c-green c3">
+        <p>Scheme</p>
+        <p>Haskell</p>
+      </div>
+    </div>
+</body>
+<script>
+  var js = document.querySelector('#test-p');
+console.log(js)
+var arr = document.querySelectorAll('.c2 p');
+console.log(arr)
+// 选择<p>Haskell</p>:
+var haskell = document.getElementByClassName('c3');
+console.log(haskell)
+console.log(haskell[0])
+    // function result (x) {
+    //   return x * x
+    // }
+    // let arr = [1, 2, 3, 4, 5, 6]
+    // let arr1 = arr.map(result)
+    // let arr2 = arr1.map(String)
+    // let arr3 = arr.reduce(function (x, y) {
+    //   return x + y
+    // })
+    // console.log(arr3)
+
+    // let arr = [1, 2, 3, 4, 5, 6]
+    // let arr1 = arr.filter(function (x) {
+    //   return x % 2 === 0
+    // })
+
+    // let arr = [' a ', '', null, 'bv  ', undefined, '', 'wq']
+    // let arr1 = arr.filter(function (x) {
+    //   return x && x.trim()
+    // })
+
+    // let color = ['red', 'yellow', 'red', 'green', 'orange', 'blue', 'red']
+    // let arr1 = color.filter(function (e, i, arr) {
+    //   return arr.indexOf(e) === i
+    // })
+    // console.log(color)
+    // console.log(arr1)
+
+    // (function (x) {console.log(x)} )(1)
+
+    // function Person (name) {
+    //   this.name = name || ''
+    //   this.color = ['red', 'green', 'blue']
+    // }
+    // Person.prototype.say = function () {
+    //   console.log(this.name)
+    // }
+    // function PersonChild () {
+    //   Person.call(this, 'alex')
+    //   this.age = 12
+    // }
+    // function inherit (p, pc) {
+    //   pc.prototype = p.prototype
+    //   // function f () {}
+    //   // f.prototype = p.prototype
+    //   // pc.prototype = new f()
+    //   // pc.fun = pc
+    // }
+    // inherit(Person, PersonChild)
+    // PersonChild.prototype.sayAge = function () {
+    //   console.log(this.age)
+    // }
+    // let p = new PersonChild()
+    // console.dir(p)
+    // p.say()
+    // p.sayAge()
+
+    // let obj = {
+    //   name: 'alex'
+    // }
+    // function p (name) {
+    //   this.name = name
+    // }
+    // let a = p.call(obj, 'yiyuan')
+    // console.log(a)
+  // function isObject(value) {
+  //   const type = typeof value;
+  //   return value !== null && (type === 'object' || type === 'function');
+  // }
+
+  /**
+  * fun 表示 new 的构造器
+  * args 表示传给构造器的参数
+  */
+  // function New(fun, ...args) {
+  //   // new 的对象不是函数就抛 TypeError
+  //   if (typeof fun !== 'function') throw new TypeError(`${fun} is not a fun`);
+
+  //   // 创建一个原型为构造器的 prototype 的空对象 target
+  //   const target = Object.create(fun.prototype);
+  //   console.dir(target)
+  //   // 将构造器的 this 指向上一步创建的空对象，并执行，为了给 this 添加实例属性
+  //   const result = fun.apply(target, args);
+  //   console.log(isObject(result))
+    
+  //   // 上一步的返回如果是对象就直接返回，否则返回 target
+  //   return isObject(result) ? result : target;
+  // }
+  // function Computer(brand) {
+  //   this.brand = brand;
+  // }
+  // let arr = []
+  // const c = New(Compuarrter, 'Apple');
+  // console.log(c); // => Computer { brand: 'Apple' }
+    // function isObject (val) {
+    //   const type = typeof val
+    //   return type !== null && (type === 'object' || type === 'function')
+    // }
+    // function New (fun, ...args) {
+    //   if (typeof fun !== 'function') {
+    //     console.log(`${fun}不是个构造函数`)
+    //   }
+    //   const target = Object.create(fun.prototype)
+    //   const result = fun.call(target, args)
+    //   return isObject(result) ? result : target
+    // }
+    // function Person (name) {
+    //   this.name = name
+    // }
+    // let p = New(Person, 'alex')
+    // console.dir(p.name)
+  </script>
+</html>

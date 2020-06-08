@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Per (name, age) {
+    this.name = name
+    this.age = age
+  }
+  Per.prototype.sayName = function () {
+    console.log(this.name)
+  }
+  Per.prototype.sayAge = function () {
+    console.log(this.age)
+  }
+  function Perclone () {
+    Per.call(this, 'alex', 12)
+  }
+  Perclone.prototype = new Per()
+  let p = new Perclone()
+  p.sayName()
+  p.sayAge()
+</script>
+</html>

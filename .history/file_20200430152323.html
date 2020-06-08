@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<style>
+  #submit{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: #fff;
+    background: orange;
+    line-height: 100px;
+    text-align: center;
+    margin: 50px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+</style>
+<body>
+  <!-- <div >
+    <img id="imgbox" src="" alt="">
+  </div>
+  <div id="info"></div>
+  <input type="file" name="" id="file" value="上传图片"> -->
+
+  <input type="file" id="file" style="display: none;" onchange="updata(this)">
+  <div id="submit">上传</div>
+  <img src="" alt="" id="imgbox">
+</body>
+<script>
+  const sub = document.querySelector('#submit')
+  const file = document.querySelector('#file')
+  sub.onclick = function () {
+    file.click()
+  }
+  function updata (file) {
+    let data = file.files[0]
+    console.log(data)
+  }
+</script>
+<script>
+//  const imgbox = document.querySelector('#imgbox')
+//  const info = document.querySelector('#info')
+//  const file = document.querySelector('#file')
+//  console.log(file)
+//  file.addEventListener('change', function () {
+//    console.log(file.files)
+//    let data = file.files[0]
+//    console.log(data)
+//    info.innerHTML = `<span>name: ${data.name}</span> </br>
+//    <span>size: ${data.size}</span></br>
+//    <span>size: ${data.lastModifiedDate}</span></br>
+//    <span>type: ${data.type}</span></br>`
+
+//    const reader = new FileReader()
+//    console.log(reader)
+//    reader.onload = function (e) {
+//      console.log(e)
+//      console.log(e.target.result)
+//      let r = e.target.result
+//      imgbox.src = r
+//    }
+//    reader.readAsDataURL(data)
+//  })
+</script>
+</html>

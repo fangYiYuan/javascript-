@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let item = {
+      name: 'alex', 
+      age: 12
+    }
+    let name = '', age = ''
+    function a ([name, age]) {
+      console.log(name, age)
+      name = name
+      age = age
+    }
+    a(item)
+    console.log(name, age)
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script> 
+  // 原型继承
+  // 1-两个funciton对象
+  // function Per (name, age) {
+  //   this.name = 'alex'
+  //   this.age = 12
+  // }
+  // Per.prototype.sayName = function () {console.log('123')}
+  // function Per2 () {}
+  // Per2.prototype = Object.create(Per.prototype)
+  // // 上午一直纠结Per2.prototype已经是Per的实例对象了
+  // // 但是无法取到Per的实例属性name和age
+  // // 下午才恍然大悟，原型继承，原型！原型！那肯定是只能继承
+  // // per原型上的属性撒，真的是太蠢了
+  // let p1 = new Per2()
+  // p1.sayName()
+  // console.dir(p1)
+
+
+  // 2-普通两个对象
+  let obj = {name: 'alex'}
+  let obj2 = {}
+  Object.setPrototypeOf(obj2, obj)
+  // obj2 = Object.create(obj)
+  console.dir(obj2)
+
+  // 3-一个普通对象一个function
+
+  function Per () {
+    this.name = 'alex'
+  }
+  let p1 = {}
+  Per.prototype.age = 12
+  Object.create(p1, Per.prototype)
+  console.log(p1)
+</script>
+</html>

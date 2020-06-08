@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {name: 'alex'}
+    function person (age, sex) {
+      return {
+        age: age,
+        sex: sex,
+        name: this.name
+      }
+    }
+    /* Function.prototype.call2 = function (o) {
+      o = o || window
+      o.fun = this
+      let arr = []
+      for (let i = 1; i < arguments.length; i++) {
+        arr.push(arguments[i])
+      }
+      let result = eval('o.fun(' + arr + ')')
+      delete o.fun
+      return result
+    }
+    let p = person.call2(obj, 12, 1)
+    console.log(p) */
+
+
+
+
+
+
+
+    Function.prototype.apply2 = function (o, arr) {
+      o = o || window
+      o.fun = this
+      o.fun()
+      delete o.fun 
+    }
+    person.apply2(obj, [12, 9])
+  </script>
+</body>
+</html>

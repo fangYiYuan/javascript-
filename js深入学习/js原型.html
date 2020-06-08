@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js原型</title>
+</head>
+<body>
+</body>
+<script>
+  function a () {
+    let b = 1
+    setTimeout(() => {
+      b = 2
+    }, 3000)
+    return b
+  }
+  let b = a()
+  console.log('user =>', b)
+  // Function.prototype.myCall = function (context){
+  //   console.log('user =>', this)
+  //   console.log('user =>', context)
+  //   if (typeof this !== 'function') {
+  //     throw new TypeError('Error')
+  //   }
+  //   var context = context || window
+  //   //给context添加一个属性
+  //   context.fn = this
+  //   //通过参数伪数组将context后面的参数取出来
+  //   var args = [...arguments].slice(1)
+  //   var result = context.fn(...args)
+  //   //删除 fn
+  //   delete context.fn
+  //   return result
+  // }
+  // let o = {name: 'alex'}
+  // function p () {
+  //   console.log('user =>', this.name)
+  // }
+  // p.myCall(o)
+
+  // function p (name) {
+  //   console.log('user =>', this.name)
+  // }
+  // let obj = {}
+  // let o = obj.p('alex')
+  // console.log('user =>', o)
+
+
+  // 1.原型 prototype 任何一个对象都有原型
+  // let obj = {
+  //   name: 'alex'
+  // }
+  // function Person (name) {
+  //   this.name = name
+  // }
+  // let p = new Person('yiyuan')
+  // console.log('user =>', p.__proto__)
+  // console.log('user =>', obj.__proto__)
+  // console.log('user =>', Object.getPrototypeOf({}) === {}.__proto__) // true
+
+  /* 2.可以通过非标准属性__proro__来访问，但是建议使用
+  Object.getPrototypeOf(), Reflect.getPrototypeOf()来获取 */
+  // let obj = {name: 'yiyuan'}
+  // obj.__proto__.age = 12
+  // console.log('user =>', Object.keys(obj))
+  // console.log('user =>', Object.keys(obj.__proto__))
+
+  /* 3.可以通过__proto__， Object.setPrototypeOf, Reflect.setPrototypeOf来给
+  对象的原型赋值，但是只限于值是对象或者null */
+  // let obj = {}
+  // let obj = new Object()
+  // obj.name = 'alex'
+  // console.log('user =>', obj.__proto__ === Object.prototype) // true
+  // console.log('user =>', Reflect.getPrototypeOf(obj) === Object.prototype) // true
+  // console.log('user =>', Object.getPrototypeOf(obj) === Object.prototype) // true
+</script>
+</html>

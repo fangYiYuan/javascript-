@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {
+      name: 'alex',
+      fun () {
+        console.log(this.name)
+      }
+    }
+    let a = obj.fun
+    setTimeout(a.bind(obj), 2000)
+  </script>
+</body>
+</html>

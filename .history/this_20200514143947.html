@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {
+      a: 1,
+      b: ['o', 'p'],
+      f () {
+        this.b.forEach(function(item) {
+          console.log(this.a + ' ' + item)
+        })
+      }
+    }
+    obj.f()
+  </script>
+</body>
+</html>

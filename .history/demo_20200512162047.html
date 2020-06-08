@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function foo() {
+      let x = 10;
+      // 闭包，捕获`foo`的环境。
+      function bar() {
+        x = 20
+        return x
+      }
+      return bar
+    }
+    console.log(foo().bar())
+  </script>
+</body>
+</html>

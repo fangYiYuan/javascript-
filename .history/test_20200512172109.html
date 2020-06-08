@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function createCounter() {
+      let count = 0;
+       return function decrement () { 
+        count--; return count; 
+      }
+    }
+    console.log(createCounter()())
+  </script>
+</body>
+</html>

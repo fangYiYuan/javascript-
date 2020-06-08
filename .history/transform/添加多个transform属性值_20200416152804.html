@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    background: rgb(1, 54, 54);
+  }
+  .grid{
+    width: 300px;
+    height: 400px;
+    margin: 100px auto;
+  }
+  .grid div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: rgb(136, 202, 233);
+  }
+  .grid div:nth-child(1){
+    border-radius: 50px 0 0 0;
+  }
+  .grid div:nth-child(2){
+    border-radius:  0 50px 0 0;
+  }
+  .grid div:nth-child(5){
+    border-radius: 0 0 50px 0;
+  }
+  .grid div:nth-child(6){
+    border-radius: 0 0 0 50px;
+  }
+</style>
+<body>
+  <div class="grid">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

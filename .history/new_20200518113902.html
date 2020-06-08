@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function Person (name, age) {
+      this.name = name
+      this.age = age
+      // return {
+      //   name: name,
+      //   age: age
+      // }
+      return 'hello world'
+    }
+    Person.prototype.sayName = function () {
+      console.log('user =>', this.name)
+    }
+    // let p = new Person('alex', 12)
+    // console.log('user =>', p)
+
+    function createNew (fun, ...arguments) {
+      let newFun = Object.create(fun.prototype)
+      let ret = fun.apply(newFun, arguments)
+      console.log('user =>', ret)
+      return newFun
+    }
+    let p = createNew(Person, 'alex', 12)
+    console.log('user =>', p)
+  </script>
+</body>
+</html>

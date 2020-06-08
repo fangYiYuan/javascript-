@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {name: 'alex'}
+    function person () {
+      console.log(this.name)
+    }
+    Function.prototype.call2 = function (o) {
+      console.log(o)
+      o.fun = this
+      o.fun()
+      delete o.fun
+    }
+    person.call2(obj, 'a', 'b', 'c')
+  </script>
+</body>
+</html>

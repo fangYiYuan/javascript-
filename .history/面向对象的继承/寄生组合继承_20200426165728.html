@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Per (name) {
+    this.name = name
+    this.color = ['red', 'green']
+  }
+  Per.prototype.sayName = function () {
+    console.log(this.name)
+  }
+  function Perclone (name, age) {
+    Per.call(this, name)
+    this.age = age
+  }
+  createF (Perclone, Per)
+  function createF (f1, f2) {
+    let clone = Object.create(f2)
+    clone.constructor = f1
+    f1.prototype = clone
+  }
+  let p1 = new Perclone('xusheng', 20)
+  console.log(p1)
+  console.log(p1.name)
+  console.log(p1.age)
+</script>
+</html>

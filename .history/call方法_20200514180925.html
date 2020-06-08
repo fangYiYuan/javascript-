@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {name: 'alex'}
+    function fun () {
+      console.log(this.name)
+    }
+    fun.call(obj)
+    Function.prototype.call2 = function () {
+      console.log('123')
+    }
+    fun.call2()
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    async function person () {
+      console.log('111')
+      return 'hello'
+      console.log('333')
+    }
+    let a = person()
+    a.then(res => {
+      console.log('2222')
+    })
+  </script>
+</body>
+</html>

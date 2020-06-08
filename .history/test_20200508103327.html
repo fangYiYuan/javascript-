@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #debounce{
+    cursor: pointer;
+  }
+</style>
+<body>
+  <button id="debounce">防抖</button>
+</body>
+<script src="./jquery-3.4.1.min.js"></script>
+<script>
+  let btn = document.querySelector('#debounce')
+  btn.onclick = debounce(btnEvent, 2000)
+  function debounce (fn, delay) {
+    let timer = null;
+    return function () {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(function () {
+        fn.apply(this)
+      }, delay)
+    }
+  } 
+  function btnEvent () {
+    console.log('ppp')
+  }
+</script>
+</html>

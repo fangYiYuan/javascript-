@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    var value = 1;
+    function foo() {
+        console.log(this.value);
+    }
+    function bar() {
+        var value = 2;
+        foo.call(this);
+    }
+    bar();
+    foo.call(bar)
+  </script>
+</body>
+</html>

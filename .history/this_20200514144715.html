@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    /* let obj = {
+      a: 1,
+      b: ['o', 'p'],
+      f () {
+        this.b.forEach(function(item) {
+          console.log(this.a + ' ' + item)
+        })
+      }
+    }
+    obj.f() */
+    // undefined o
+    // undefined p
+    /* 在对象中，只有第一层函数的this指向的是当前对象
+    可以用 let that = this或者箭头函数改变*/
+
+    /* let obj = {
+      a: 1,
+      b: ['o', 'p'],
+      f () {
+        this.b.forEach((item) => {
+          console.log(this.a + ' ' + item)
+        })
+      }
+    }
+    obj.f() */
+    // 1 o
+    // 1 p
+  </script>
+</body>
+</html>

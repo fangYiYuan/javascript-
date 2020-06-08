@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function A (name) {
+    this.name = name
+  }
+  A.prototype.sayName = function () {
+    console.log(this.name)
+  }
+  function B (age) {
+    this.age = 12
+  }
+  B.prototype = new A()
+  let b = new B(18)
+  let b2 = new B(18)
+  b2.name = 'xu'
+  console.log(b.name)
+  console.log(b2.name)
+  
+  // console.dir(a)d
+  // console.dir(b)
+  // console.dir(b.__proto__.__proto__.__proto__ === Object.prototype)
+</script>
+</html>

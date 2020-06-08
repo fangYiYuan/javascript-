@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="imgbox"></div>
+  <div id="info"></div>
+  <input type="file" name="" id="file" value="上传图片">
+</body>
+<script>
+ const imgbox = document.querySelector('#imgbox')
+ const info = document.querySelector('#info')
+ const file = document.querySelector('#file')
+ file.addEventListener('change', function () {
+   let data = file.files[0]
+   info.innerHTML = `<span>name: ${data.name}</span> </br>
+   <span>size: ${data.size}</span></br>
+   <span>size: ${data.lastModifiedDate}</span></br>
+   <span>type: ${data.type}</span></br>`
+
+   const reader = new FileReader()
+   console.log(reader)
+   reader.onload = function (e) {
+     console.log(e.target.result)
+   }
+   reader
+ })
+</script>
+</html>

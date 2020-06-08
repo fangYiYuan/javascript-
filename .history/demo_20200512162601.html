@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function a(){ 
+      alert(333);
+      return function (key) {
+        console.log(key)
+      }
+    } 
+   a()(22)
+
+  </script>
+</body>
+</html>

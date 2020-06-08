@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let obj = {
+      name: 'quan',
+      birth: '1995',
+      like: 'code'
+    }
+    console.log(obj)
+    delete obj.birth
+    console.log(obj)
+    console.log('name' in obj)
+    console.log('toString' in obj)
+    console.log(obj.hasOwnProperty('toString'))
+    console.log(obj.hasOwnProperty('name'))
+  </script>
+</body>
+</html>

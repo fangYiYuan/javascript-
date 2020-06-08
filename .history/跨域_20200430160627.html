@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="con"></div>
+  <button id="btn">获取</button>
+</body>
+<script>
+  // 通过Flash插件发送http请求， 这种方式可以绕过浏览器的安全限制，但必须安装Flash，并且跟Flash交互。不过Flash用起来麻烦，而且现在用得也越来越少了。
+
+  // 通过在同源域名下架设代理服务器来进行转发，所以的请求都发送到代理服务器。
+
+  //JSONP
+
+  let btn = document.querySelector('#btn')
+  let con = document.querySelector('#con')
+  function get () {
+    let s = document.createElement('script')
+    let head = document.querySelector('head')
+    s.src = 'http://api.money.126.net/data/feed/0000001,1399001?callback=refreshPrice'
+    head.appendChild(s)
+  }
+  function refreshPrice () {
+    
+  }
+  get()
+</script>
+</html>

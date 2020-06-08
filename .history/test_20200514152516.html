@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function M1() {
+      this.hello = 'hello';
+    }
+
+    function M2() {
+      this.world = 'world';
+    }
+
+    function S() {
+      M1.call(this);
+      M2.call(this);
+    }
+    let s = new S()
+    console.log(s)
+    console.log(s.hello)
+    console.log(s.world)
+  </script>
+</body>
+</html>

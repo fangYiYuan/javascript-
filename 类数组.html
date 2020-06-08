@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    /* let arr = {0: 'name', 1: 'age', length: 2}
+    let a1 = Array.prototype.join.call(arr, '|')
+    console.log('user =>', a1)
+    let a2 = Array.prototype.slice.call(arr)
+    console.log('user =>', a2)
+    let a3 = Array.prototype.splice.call(arr, 0)
+    console.log('user =>', a3, arr)
+    let a4 = Array.from(arr)
+    console.log('user =>', a4)
+    let a5 = Array.prototype.concat.apply([], arr)
+    console.log('user =>', a5) */
+
+    var data = []
+    for (var i = 0; i < 3; i++) {
+      (data[i] = function () {
+        console.log(arguments.callee.i)
+      }).i = i;
+    }
+    data[0]()
+    data[1]()
+    data[2]()
+    
+    // 数组合并
+    // let arr = [1,2,3]
+    // let arr2 = [3,4,5]
+    // // let arr3  = [...arr, ...arr2]
+    // // let arr3  = arr.concat(arr2)
+    // arr.push.apply(arr, arr2)
+    // console.log(arr)
+  </script>
+</body>
+</html>

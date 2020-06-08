@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let obj1 = {
+    sayName = function () {return 'alex'}
+  }
+  let obj2 = {
+    sayName = function () {return 'yiyuan'}
+  }
+  let p = Object.creat(obj1)
+  console.log(p)
+  // function A () {}
+  // let a = new A()
+  // Object.setPrototypeOf(A, {name: 'alex'})
+  // console.log(a.__proto__=== A.prototype)
+  // console.log(a)
+
+
+  // console.log(A.prototype.isPrototypeOf(a))
+  // console.log(Object.getPrototypeOf(a) === A.prototype)
+  
+  // function A () {}
+  // function B () { 
+  //   // 污染属性 
+  //   this.name = 'alex'
+  // }
+  // B.prototype.say = function () {alert('hello')}
+  // function Empty(){}
+
+  // Empty.prototype = B.prototype
+  // A.prototype = new Empty()
+  // console.dir(A.prototype)
+  // // A.prototype.constructor = A
+  // console.dir(A.prototype)
+  // let person = new A()
+  // let person2 = new Empty()
+  // let person3 = new B()
+  // // person.say()
+  // console.log(person.name)
+  // console.log(person2.name)
+  // console.log(person3.name)
+  // person3.say()
+  // console.dir(A.prototype.__proto__.say())
+  // function a () {
+  //   this.name = 'yiyuan'
+  // }
+  // function b () {
+  //   this.age = 12
+  // }
+  // b.prototype = new a()
+  // let a1 = new a()
+  // b.prototype.name = 'alex'
+  // console.dir(b.prototype)
+  // console.dir(a1)
+  // let c = new a()
+  // console.log(c.name)
+  // function Per () {}
+  // let p = new Per()
+  // console.dir(Per.__proto__.__proto__.__proto__)
+  // console.log(Per.prototype.__proto__.__proto__)
+  // console.dir(Object)
+  // console.dir(new Object().__proto__)
+  // Per.prototype.name = 'alex'
+  // console.log(p.age)
+  // console.log('user => ', p.__proto__ === Per.prototype)
+  // console.log('user => ', p.__proto__ === Per.prototype)
+  // console.log('user => ', Per.prototype)
+  // for (k in obj) {
+  //   console.log('user => ', k)
+  // }
+  // var obj = {name: 'abc'}
+  // obj.__proto__ = {age: 12}
+  // obj.__proto__ = null
+  // console.dir(Object)
+  // console.dir(p1)
+  // console.dir(Per.prototype)
+  // console.log({})
+  // function Person () {}
+  // Person.prototype.name = 'alex'
+  // let p = new Person()
+  // let p2 = new Person()
+  // p2.name = 'yiyuan'
+  // p2.age = 12
+  // // console.log('user => ', p.name)
+  // console.log('user => ', p2.hasOwnProperty(name))
+</script>
+</html>

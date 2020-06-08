@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function foo() {
+      let x = 10;
+      // 闭包，捕获`foo`的环境。
+      function bar() {
+        return x;
+      }
+      // 向上funarg。
+      return bar;
+    }
+    let x = 20;
+    // 调用`foo`来返回`bar`闭包。
+    let bar = foo();
+    bar(); // 10，而不是20!
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    let arr = [2, 3, 3, 5, 6]
+    let arr2 = [6, 3, 3, 1, 9]
+    let newArr = new Set([...arr, ...arr2])
+    console.log(newArr)
+    console.log(newArr['2'])
+    console.log(Array.from(newArr))
+
+    // function newArr (arr, arr2) {
+    //   let total = arr.concat(arr2)
+    //   let obj = {}
+    //   let arr3 = []
+    //   for (let i of total) {
+    //     if (!obj[i]) {
+    //       arr3.push(i)
+    //       obj[i] = i
+    //     }
+    //   }
+    //   return arr3
+    // }
+    // console.log(newArr(arr, arr2))
+  </script>
+</body>
+</html>

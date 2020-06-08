@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    // let a = ['a', 1, 'bc'].toString()
+    // console.log( typeof a)
+
+    let obj = {name: 'alex'}
+    function person (age, sex) {
+      return {
+        name: this.name,
+        age: age,
+        sex: sex
+      }
+    }
+    // let p = person.call(obj, 99, 9)
+    // console.log('user =>', p)
+
+    // call
+    Function.prototype.call2 = function (o) {
+      console.log('user =>', this)
+      console.log('user =>', o)
+      o = o || window
+      o.fun = this
+      let arr = []
+      // let arr = [...arguments].slice(1)
+      // let arr = [...arguments].splice(1)
+      for (let i = 1; i < arguments.length; i++) {
+        arr.push(arguments[i])
+      }
+      console.log('user =>aaa', arr)
+      // let result = eval('o.fun(' + arr + ')')
+      let result = o.fun(...arr)
+      console.log('user =>', result)
+      delete o.fun
+      return result
+    }
+    let p = person.call2(obj, 12, 1)
+    console.log(p)
+
+    // apply
+    /* Function.prototype.apply2 = function (o, arr) {
+      o = o || window
+      o.fun = this
+      let subArr = []
+      if (!arr.length) {
+        return o.fun()
+      } else {
+        return eval('o.fun(' + [...arr] + ')')
+      }
+      delete o.fun
+    }
+    let p =  person.apply2(obj, [12, 9])
+    console.log(p) */
+
+    
+    // let obj = {
+    //   name: 'alex',
+    //   age: 12
+    // }
+    // function person (name, age) {
+    //   return {
+    //     name2: this.name,
+    //     age2: this.age,
+    //     name: name,
+    //     age: age
+    //   }
+    // }
+
+    // let p = person.bind(obj, 'yiyuan', 99) // 原生bind
+    // let obj2 = new p('ppp')
+    // console.log(p())
+    // console.log('user =>', obj2)
+
+    // Function.prototype.bind2 = function (o) {
+    //   o = o || window
+    //   let arr = [...arguments].splice(1)
+    //   let fun = () => {
+    //     return this.apply(o, arr)
+    //   }
+    //   return fun
+    // }
+    // let p = person.bind2(obj, 'yiyuan', 99)
+    // console.log(p())
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function Per () {
+      this.data = this.data()
+    }
+    // Per.prototype.data = {a: 1, b: 2}
+
+    Per.prototype.data = function () {
+      return {
+        a: 1, b: 2
+      }
+    }
+    let p1 = new Per()
+    let p2 = new Per()
+    console.log(p1)
+    console.log(p2)
+    // console.log(p1.data)
+    // console.log(p2.data)
+  </script>
+</body>
+</html>

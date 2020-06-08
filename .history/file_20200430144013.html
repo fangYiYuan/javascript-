@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="imgbox"></div>
+  <div id="info"></div>
+  <input type="file" name="" id="file" value="上传图片">
+</body>
+<script>
+ const imgbox = document.querySelector('#imgbox')
+ const info = document.querySelector('#info')
+ const file = document.querySelector('#file')
+ file.addEventListener('change', function () {
+   console.log(file)
+ })
+</script>
+</html>

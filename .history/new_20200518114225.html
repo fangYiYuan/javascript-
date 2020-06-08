@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function Person (name, age) {
+      this.name = name
+      this.age = age
+      return {
+        name: name,
+        age: age
+      }
+      // return 'hello world'
+    }
+    Person.prototype.sayName = function () {
+      console.log('user =>', this.name)
+    }
+    // let p = new Person('alex', 12)
+    // console.log('user =>', p)
+
+    function createNew (fun, ...arguments) {
+      var obj = new Object(),
+
+    Constructor = [].shift.call(arguments);
+
+    obj.__proto__ = Constructor.prototype;
+
+    var ret = Constructor.apply(obj, arguments);
+
+    return typeof ret === 'object' ? ret : obj;
+    }
+    let p = createNew(Person, 'alex', 12)
+    console.log('user =>', p)
+  </script>
+</body>
+</html>

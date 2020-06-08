@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    function Per () {
+
+    }
+    Per.prototype.data = 123
+    let p1 = new Per()
+    let p2 = new Per()
+    p1.data = 999
+    console.log(p1.data)
+    console.log(p2.data)
+  </script>
+</body>
+</html>

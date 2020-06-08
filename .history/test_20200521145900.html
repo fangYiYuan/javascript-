@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <button id="btn">++</button>
+  <script>
+    let btn = document.querySelector('#btn')
+    btn.onclick = () => {
+      console.log('user =>', increment())
+    }
+    function increment () {
+      let a = 1
+      return (function (a) {
+        return a++
+      })(a)
+    }
+  </script>
+</body>
+</html>
