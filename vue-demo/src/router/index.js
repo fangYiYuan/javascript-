@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import ProductListOne from '@/components/ProductListOne'
 import ShopCart from '@/components/ShopCart'
-import Main from '@/components/Bus/Main'
+import SuperPage from '@/components/Bus/Super'
 
 Vue.use(Router)
 
@@ -25,9 +25,9 @@ export default new Router({
       component: ProductListOne
     },
     {
-      path: '/main',
-      name: 'Main',
-      component: Main
+      path: '/superpage',
+      name: 'SuperPage',
+      component: SuperPage
     }
   ],
   mode: 'history'
