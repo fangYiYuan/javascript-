@@ -7,45 +7,6 @@
 <body>
 </body>
 <script>
-  function a () {
-    let b = 1
-    setTimeout(() => {
-      b = 2
-    }, 3000)
-    return b
-  }
-  let b = a()
-  console.log('user =>', b)
-  // Function.prototype.myCall = function (context){
-  //   console.log('user =>', this)
-  //   console.log('user =>', context)
-  //   if (typeof this !== 'function') {
-  //     throw new TypeError('Error')
-  //   }
-  //   var context = context || window
-  //   //给context添加一个属性
-  //   context.fn = this
-  //   //通过参数伪数组将context后面的参数取出来
-  //   var args = [...arguments].slice(1)
-  //   var result = context.fn(...args)
-  //   //删除 fn
-  //   delete context.fn
-  //   return result
-  // }
-  // let o = {name: 'alex'}
-  // function p () {
-  //   console.log('user =>', this.name)
-  // }
-  // p.myCall(o)
-
-  // function p (name) {
-  //   console.log('user =>', this.name)
-  // }
-  // let obj = {}
-  // let o = obj.p('alex')
-  // console.log('user =>', o)
-
-
   // 1.原型 prototype 任何一个对象都有原型
   // let obj = {
   //   name: 'alex'
